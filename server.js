@@ -9,6 +9,7 @@ dotenv.config({ path: './config.env' });
 
 const app = express();
 app.use(express.json());
+app.use(express.urlencoded());
 
 mongoose.connect(process.env.DATABASE_URI + '/quotesDB')
   .then((p) => {
